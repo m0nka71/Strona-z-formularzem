@@ -2,6 +2,7 @@ package com.javastart.webform;
 
 public class Email {
     private String receiver;
+    private String subject;
     private String email;
     private String content;
 
@@ -27,5 +28,13 @@ public class Email {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 }

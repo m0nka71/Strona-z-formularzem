@@ -6,6 +6,7 @@
 <header th:replace="~{fragments :: header}"></header>
 
 <form th:action="@{/form}" method="post" th:object="${email}">
+
     <div class="form-group">
         <label for="inputAddress">Imię</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="" th:field="*{receiver}">
@@ -14,6 +15,11 @@
     <div class="form-group">
         <label for="exampleFormControlInput1">Adres email</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nazwa@gmail.com" th:field="*{email}">
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Temat</label>
+        <input type="text" class="form-control" id="subject" th:field="*{subject}">
     </div>
 
     <div class="form-group">

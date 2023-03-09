@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AppController {
-    private MailService mailService;
+    private final MailService mailService;
 
     public AppController(MailService mailService) {
         this.mailService = mailService;
@@ -22,9 +22,6 @@ public class AppController {
     public String sendForm(Model model) {
         Email email = new Email();
         model.addAttribute("email", email);
-        model.addAttribute("receiver", email.getReceiver());
-        model.addAttribute("email", email.getEmail());
-        model.addAttribute("content", email.getContent());
 
         return "form";
     }

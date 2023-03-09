@@ -13,7 +13,7 @@ public class MailService {
 
     private static final Logger logger = LoggerFactory.getLogger(MailService.class);
 
-    private JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
 
     public MailService(JavaMailSender javaMailSender) {
         this.javaMailSender = javaMailSender;
@@ -21,15 +21,24 @@ public class MailService {
 
     public void sendEmail(Email email) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessage replayMimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
+        MimeMessageHelper replayHelper = new MimeMessageHelper(replayMimeMessage, "utf-8");
 
         try {
 
-            helper.setTo(email.getReceiver());
+            helper.setTo("testtest@javastart.pl");
             helper.setFrom(email.getEmail());
+            helper.setSubject(email.getSubject());
             helper.setText(email.getContent(), true);
 
+            replayHelper.setTo(email.getEmail());
+            replayHelper.setFrom("testtest@javastart.pl");
+            replayHelper.setSubject("Witaj");
+            replayHelper.setText("Dzieki za wiadomosc! Niebawem odpowiemy :)", true);
+
             javaMailSender.send(mimeMessage);
+            javaMailSender.send(replayMimeMessage);
 
         } catch (MessagingException e) {
             logger.warn("Błąd wysyłania wiadomosci", e);
