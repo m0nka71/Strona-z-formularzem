@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div class="club-info">
+
+    <h3>
+        <a th:href="@{/about}">O nas!</a>
+    </h3>
+
+    <h3>
+        <a th:href="@{/form}">Napisz do nas!</a>
+    </h3>
+</div>
+
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>

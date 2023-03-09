@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: mailpit.javastart.pl
+    port: 1025
+    username: testtest@javastart.pl
+    password: asdasdasd
+
+logging:
+  level:
+    com.javastart.webform: DEBUG
+
+

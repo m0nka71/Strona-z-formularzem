@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    padding: 50px;
+    margin: 50px;
+    font-size: 13px;
+}
+
+.photo {
+    width: 400px;
+    height: 250px;
+    margin: 5px;
+}
+
+.club-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+body {
+    color: white;
+    background-color: #282d32;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 30px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    align-items: center;
+}
